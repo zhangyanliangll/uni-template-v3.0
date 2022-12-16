@@ -1,0 +1,40 @@
+page,
+view,
+input,
+textarea {
+  box-sizing: border-box;
+}
+
+.placeholder,
+input::placeholder,
+textarea::placeholder,
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: $uni-text-color-placeholder;
+}
+
+button::after {
+  content: none;
+}
+
+image {
+  display: block;
+  border: 0;
+}
+
+page {
+  -webkit-overflow-scrolling: touch; // 解决ios滑动不流畅
+  height: 100%;
+  width: 100%;
+  word-break: break-all; //英文文本不换行
+  white-space: normal;
+}
+
+/* 隐藏scroll-view的滚动条 */
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  background: transparent;
+  -webkit-appearance: none;
+}
