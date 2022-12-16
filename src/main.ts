@@ -7,15 +7,17 @@ import '@/utils/inject'
 // 注册 全局公共 方法
 import '@/utils/inject'
 
-// 打印日志 工具 - H5 --
-// if (notPro) {
-//   Promise.all([import('vconsole')]).then((res) => {
-//     if (res.length === 1) {
-//       const VConsole = res[0].default
-//       new VConsole()
-//     }
-//   })
-// }
+// #ifdef H5
+// 打印日志 工具
+if (import.meta.env.VITE_PROD) {
+  Promise.all([import('vconsole')]).then((res) => {
+    if (res.length === 1) {
+      const VConsole = res[0].default
+      new VConsole()
+    }
+  })
+}
+// #endif
 
 export function createApp() {
   const app = createSSRApp(App)
