@@ -22,13 +22,13 @@
 
 # 项目插件版本：
 
-1. vue@3.2.41、vuex@4.0.0;
-2. vant@3.0.0；适配vue@3.0.0;
-3. node 版本 v14.15.4;
+1. vue@3.2. pinia@2.0.25;
+2. node 版本 v14.15.4;
+3. uni-app @3.0
 
 ## 文件的命名规范和样式的命名规范：
 
-文件目录页面命名规范：文件:DynamiComponent.ts -> dynamic-component.ts; 目录:FormGroup -> form-group; 页面:Home.vue -> Home.vue;
+文件目录页面命名规范：文件:DynamiComponent.ts -> dynamic-component.ts; 目录:FormGroup -> form-group; 页面:Home.vue -> home.vue;
 
 ### vite cli 配置
 
