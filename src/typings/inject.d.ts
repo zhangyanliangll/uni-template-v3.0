@@ -56,7 +56,7 @@ declare global {
      */
     toChies(): string
   }
-  interface Number {
+  interface Date {
     /**
      * 支持美式时间格式
      * @param option 输入 YYYY-MM-DD HH:mm:ss
