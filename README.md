@@ -7,7 +7,8 @@
 ## src 目录结构
 
 - assets 资产目录
-  - mixins 公用混入类目录
+  - images 公用图片
+  - scss 公共 scss
   - json 本地数据目录
   - ts 公用脚本目录
 - components vue 组件目录
