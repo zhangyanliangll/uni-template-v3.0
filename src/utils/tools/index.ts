@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-
 /**
  * @description: 节流函数
  * @param {Function} fn 回调

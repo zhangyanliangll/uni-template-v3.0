@@ -17,6 +17,7 @@ export default (): UseNavigate => {
     if (isObject(data)) {
       url += `?${qs.stringify(data)}`
     }
+    console.log(url, '*-*-*-url*-*-*')
 
     return new Promise((resolve, reject) => {
       // 获取当前页面栈的实例，以数组形式按栈的顺序给出，

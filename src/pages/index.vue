@@ -1,10 +1,18 @@
 <template>
   <view class="content flex-column justify-center items-center">
-    <!-- <view @click="jump">跳123转</view> -->
+    <view @click="jump">跳123转</view>
   </view>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import useBaseComponent from '@/hooks/use-base-component'
+
+const { navigateGo } = useBaseComponent()
+
+const jump = () => {
+  navigateGo('/pages/my')
+}
+</script>
 
 <style lang="scss" scoped>
 .content {

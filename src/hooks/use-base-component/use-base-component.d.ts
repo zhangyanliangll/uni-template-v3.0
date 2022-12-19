@@ -14,5 +14,5 @@ export type ToastOptionsType = {
 export interface UseBaseComponent {
   toast: (options: string | ToastOptionsType) => Promise<unknown>
   modal: (options: string | any) => Promise<unknown>
-  navigateGo: (options: NavigateGoOptionsType, redirect: boolean) => void
+  navigateGo: (options: NavigateGoOptionsType, redirect?: boolean) => void
 }

@@ -3,7 +3,7 @@
 		{
 			"path": "pages/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "首页"
 			}
 		},
 		{
@@ -15,32 +15,48 @@
 		{
 			"path": "pages/my",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "我的"
 			}
 		}
 	],
-  "tabBar": {
-    "borderStyle": "white",
-    "color": "#16191e",
-    "selectedColor": "#00b3ff",
-    "backgroundColor": "#fff",
-    "list": [
-      {
-        "pagePath": "pages/index",
-        "text": "首页",
-        "iconPath": "static/icon-new-follow-current.png",
-        "selectedIconPath": "static/icon-new-follow-current.png"
-      },
-      {
-        "pagePath": "pages/web-view",
-        "text": "我的",
-        "iconPath": "static/icon-new-follow-current.png",
-        "selectedIconPath": "static/icon-new-follow-current.png"
-      }
-    ]
-  },
+  "subPackages": [
+		{
+			"root": "package-user",
+			"pages": [
+				{
+					"path": "pages/index",
+					"style": {
+						"navigationBarTitleText": "package-user"
+					},
+          "meta": {
+            "ignoreAuth": true
+          }
+				}
+			]
+		}
+	],
+	"tabBar": {
+		"borderStyle": "white",
+		"color": "#16191e",
+		"selectedColor": "#00b3ff",
+		"backgroundColor": "#fff",
+		"list": [
+			{
+				"pagePath": "pages/index",
+				"text": "首页",
+				"iconPath": "static/icon-new-follow-current.png",
+				"selectedIconPath": "static/icon-new-follow-current.png"
+			},
+			{
+				"pagePath": "pages/my",
+				"text": "我的",
+				"iconPath": "static/icon-new-follow-current.png",
+				"selectedIconPath": "static/icon-new-follow-current.png"
+			}
+		]
+	},
 	"globalStyle": {
-    "navigationStyle": "custom",
+		"navigationStyle": "custom",
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-preset-vue",
 		"navigationBarBackgroundColor": "#F8F8F8",

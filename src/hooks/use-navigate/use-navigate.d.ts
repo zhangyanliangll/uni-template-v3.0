@@ -36,5 +36,5 @@ export interface UseNavigate {
    * @param { Object } data 跳转参数
    * @returns { Promise }
    */
-  switchTab: (url: string, data?: Record<string, unknown>) => Promise<unknown>
+  switchTab: (url: string) => Promise<unknown>
 }
