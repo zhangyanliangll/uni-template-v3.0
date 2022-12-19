@@ -43,7 +43,7 @@
 | git show | 显示某次提交的内容 git show \$id |
 | git pull[remoteName][locabranchname] | 拉取远程仓库 remoteName 远程仓库一般是 origin |
 | git push[remoteName][locabranchname] | 推送远程仓库 |
-| git reset --hard commit_id | 恢复最近一次提交过的状态, 即放弃上次提交后的所有本次修改,还没有 push |
+| git reset --hard commit_id | 恢复最近一次提交过的状态, 还没有 push |
 | git status | 查询 repo 的状态 |
 | git log | 查看提交记录, 按 q 退出 |
 | git revert | 反转撤销提交 |
