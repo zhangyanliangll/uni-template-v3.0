@@ -17,4 +17,4 @@ navigateGo('http://localhost')
 ;
 ```
 
-详见 usenNvigate/index.ts
+详见 useBaseComponent/index.ts
