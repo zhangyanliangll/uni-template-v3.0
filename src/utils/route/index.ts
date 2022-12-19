@@ -43,6 +43,11 @@ const isTabBar = (path: string) => {
   return pagesMap.get(path)?.meta?.tabBar
 }
 
+// 是否存在页面
+const isPage = (path: string) => {
+  return pagesMap.get(path)
+}
+
 console.log(pagesMap, '*-*-*pagesMap---')
 
-export { isTabBar, pagesMap }
+export { isTabBar, isPage, pagesMap }

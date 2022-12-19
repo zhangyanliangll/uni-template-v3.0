@@ -1,5 +1,5 @@
 import useRouter from '@/hooks/use-navigate'
-import { isTabBar, pagesMap } from '@/utils/route'
+import { isTabBar, isPage } from '@/utils/route'
 import { isString, isObject } from '@/utils/is'
 import type { UseBaseComponent } from './use-base-component'
 
@@ -31,7 +31,7 @@ export default (): UseBaseComponent => {
       }
     }
 
-    if (!pagesMap.get(url)) {
+    if (!isPage(url)) {
       throw '页面不存在 404 '
     }
 
