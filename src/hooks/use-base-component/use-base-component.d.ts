@@ -7,7 +7,7 @@ export type NavigateGoOptionsType = {
 
 export type ToastOptionsType = {
   title: string
-  icon: string
+  icon?: string
   duration?: string | number
 }
 
