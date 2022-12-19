@@ -2,7 +2,7 @@ export type navigateOptionsType = string | any
 
 export type NavigateGoOptionsType = {
   url: string
-  data?: Record<string, unknown>
+  query?: Record<string, unknown>
 } | string | number
 
 export type ToastOptionsType = {
