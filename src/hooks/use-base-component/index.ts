@@ -4,14 +4,14 @@ import { isString, isObject } from '@/utils/is'
 import type { UseBaseComponent } from './use-base-component'
 
 export default (): UseBaseComponent => {
-  const { navigateTo, redirectTo, switchTab } = useRouter()
+  const { navigateTo, redirectTo, reLaunch, switchTab } = useRouter()
 
   /**
    * 跳转方法
    * @param options 跳转配置
-   * @param redirect 是否关闭当前页面 默认 false
+   * @param type 类型 redirect
    */
-  const navigateGo = (options: any, redirect?: boolean) => {
+  const navigateGo = (options: any, type?: string) => {
     let url = options?.url || options || '' // 跳转路径
     let query = options?.query || {}
 
@@ -40,7 +40,13 @@ export default (): UseBaseComponent => {
       return switchTab(url)
     }
 
-    if (redirect) {
+    // 关闭所有页面
+    if (type === 'reLaunch') {
+      return reLaunch(url, query)
+    }
+
+    // 关闭当前页面
+    if (type === 'redirect') {
       return redirectTo(url, query)
     }
 
