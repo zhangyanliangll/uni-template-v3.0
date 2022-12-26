@@ -71,17 +71,17 @@ export const request = async ({
 /**
  * 文件上传 api
  * @param url 请求路径
- * @param file 文件 file
+ * @param filePath 文件 资源路径
  * @returns
  */
 export const upload = async (
   url: string,
-  file: any,
+  filePath: string,
 ): Promise<{ url: string }> => {
   return new Promise((resolve, reject) => {
     uni.uploadFile({
       url: API_UPLOAD_URL + url,
-      filePath: file,
+      filePath,
       name: 'file',
       formData: {},
       success: (response) => {
