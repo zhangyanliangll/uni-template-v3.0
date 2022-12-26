@@ -1,5 +1,6 @@
 import {
   API_BASE_URL,
+  API_UPLOAD_URL,
   REQUEST_TIMEOUT,
   NO_ERROR_MSG_CODE,
   ERROR_STATUS,
@@ -68,6 +69,42 @@ export const request = async ({
 }
 
 /**
+ * 文件上传 api
+ * @param url 请求路径
+ * @param file 文件 file
+ * @returns
+ */
+export const upload = async (
+  url: string,
+  file: any,
+): Promise<{ url: string }> => {
+  return new Promise((resolve, reject) => {
+    uni.uploadFile({
+      url: API_UPLOAD_URL + url,
+      filePath: file,
+      name: 'file',
+      formData: {},
+      success: (response) => {
+        const data = JSON.parse(response.data)
+        if (response.statusCode === 200) {
+          resolve(data.result)
+        } else {
+          uni.showToast({
+            title: (ERROR_STATUS as any)[response.statusCode],
+            mask: true,
+            icon: 'none',
+          })
+          reject(response.data)
+        }
+      },
+      fail: (error) => {
+        reject(error)
+      },
+    })
+  })
+}
+
+/**
  * get 请求
  * @param url
  * @param params
@@ -98,4 +135,5 @@ const post = (url: string, params = {}): Promise<unknown> => {
 export default {
   get,
   post,
+  upload,
 }
