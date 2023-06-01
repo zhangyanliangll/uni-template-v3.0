@@ -99,5 +99,8 @@
     "src/**/*.{js,jsx,vue,ts,tsx}": [
       "eslint --fix"
     ]
+  },
+  "volta": {
+    "node": "16.20.0"
   }
 }

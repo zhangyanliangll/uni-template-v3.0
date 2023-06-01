@@ -56,3 +56,11 @@
 | git reset --soft HEAD^ | 仅仅撤销 commit ,保留 add
 
 | git reset --hard HEAD^ | 撤销 commit 并且也撤销 add
+
+| `sudo n 14.0.0` | 安装指定版本 node
+
+| node 版本 切换工具 volta ｜ Mac 安装： `curl https://get.volta.sh | bash`
+
+| volta install node@14 ｜ 默认使用的版本
+
+| volta pin node@14.17 | 当前项目需要使用 node 的版本

@@ -20,7 +20,6 @@ export default (): UseBaseComponent => {
       if (options.isUrl()) {
         // #ifdef H5
         window.location = options as any
-        return
         // #endif
         // #ifndef H5
         url = '/pages/web-view'
