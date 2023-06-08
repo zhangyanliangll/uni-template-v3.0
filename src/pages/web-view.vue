@@ -4,18 +4,54 @@
 
 <script setup lang="ts">
 import { onLoad } from '@dcloudio/uni-app'
+import qs from 'qs'
+import { isObject } from '@/utils/is'
+import { WebViewConfig, WebViewConfigKeysType } from '@/typings/web-view'
+
 import { ref } from 'vue'
 
-const config = {
-  _path: {
-    host: '',
-    query: '',
-  },
-}
 const url = ref('')
 
+const config: WebViewConfig = {
+  _path: {
+    title: '',
+    host: '',
+    query: `appid=${123123}`,
+  },
+  'add-user': {
+    title: '',
+    host: '',
+    query: `appid=${123123}`,
+  },
+}
+
 onLoad((options: any) => {
-  url.value = decodeURIComponent(options.url)
+  const { key } = options
+
+  let { query } = options
+
+  if (Object.prototype.hasOwnProperty.call(config, key)) {
+    const configItem = config[key as WebViewConfigKeysType]
+    const { host, title } = configItem
+
+    if (isObject(query)) {
+      query = `${qs.stringify(query)}&`
+    }
+
+    if (configItem?.query) {
+      query += configItem.query
+    }
+
+    // 默认 H5 跳转 域名
+    const IP = host ? host : ''
+
+    // 设置标题
+    wx.setNavigationBarTitle({
+      title: options.title || title,
+    })
+
+    url.value = `${IP}/${key}?${query}`
+  }
 })
 </script>
 

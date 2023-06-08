@@ -19,6 +19,7 @@ navigateGo('http://localhost')
 
 1. navigateGo 方法
    1.1. 传参 options 可为 string | { url: string , query?: { } }
+   | { isH5: boolean , query: { key: WebViewConfigKeysType }}
    2.2. 传参 redirect 是否关闭当前页面
 
 详见 useBaseComponent/index.ts

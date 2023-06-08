@@ -1,17 +1,23 @@
+import { WebViewConfigKeysType } from '@/typings/web-view';
+
 export type navigateOptionsType = string | any
 
 export type NavigateGoOptionsType = {
   url: string
-  isH5?: boolean
-  query?: NavigateGoOptionsQueryType
-} | string | number
-
-export type NavigateGoType = 'redirect' | 'reLaunch'
-
-export interface NavigateGoOptionsQueryType {
-  [key: string]: any
+  query?: Record<string, any>
 }
 
+export type NavigateGoOptionsH5Type = {
+  isH5: boolean
+  query: NavigateGoOptionsQueryH5Type
+}
+
+export interface NavigateGoOptionsQueryH5Type {
+  [key: string]: any
+  key: WebViewConfigKeysType
+}
+
+export type NavigateGoType = 'redirect' | 'reLaunch'
 
 export type ToastOptionsType = {
   title: string
@@ -22,5 +28,5 @@ export type ToastOptionsType = {
 export interface UseBaseComponent {
   toast: (options: string | ToastOptionsType) => Promise<unknown>
   modal: (options: string | any) => Promise<unknown>
-  navigateGo: (options: NavigateGoOptionsType, type?: NavigateGoType) => void
+  navigateGo: (options: NavigateGoOptionsType | NavigateGoOptionsH5Type | string | number, type?: NavigateGoType) => void
 }
