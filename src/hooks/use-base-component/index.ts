@@ -19,6 +19,7 @@ export default (): UseBaseComponent => {
     if (url.isUrl() || options?.isH5) {
       // #ifdef H5
       window.location = url as any
+      return
       // #endif
       // #ifndef H5
       url = '/pages/web-view'
