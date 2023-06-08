@@ -13,21 +13,16 @@ export default (): UseBaseComponent => {
    */
   const navigateGo = (options: any, type?: string) => {
     let url = options?.url || options || '' // 跳转路径
-    let query = options?.query || {}
+    const query = options?.query || {}
 
-    if (isString(options)) {
-      // http 开头
-      if (options.isUrl()) {
-        // #ifdef H5
-        window.location = options as any
-        // #endif
-        // #ifndef H5
-        url = '/pages/web-view'
-        query = {
-          url: encodeURIComponent(options),
-        }
-        // #endif
-      }
+    // http 开头 || isH5
+    if (url.isUrl() || options?.isH5) {
+      // #ifdef H5
+      window.location = url as any
+      // #endif
+      // #ifndef H5
+      url = '/pages/web-view'
+      // #endif
     }
 
     if (!isPage(url)) {
@@ -36,20 +31,14 @@ export default (): UseBaseComponent => {
 
     // 是 tabBar 页面
     if (isTabBar(url)) {
-      return switchTab(url)
+      switchTab(url)
+    } else if (type) {
+      // 关闭当前页面:redirectTo  关闭所有页面:reLaunch
+      const api = type === 'reLaunch' ? reLaunch : redirectTo
+      api(url, query)
+    } else {
+      navigateTo(url, query)
     }
-
-    // 关闭所有页面
-    if (type === 'reLaunch') {
-      return reLaunch(url, query)
-    }
-
-    // 关闭当前页面
-    if (type === 'redirect') {
-      return redirectTo(url, query)
-    }
-
-    return navigateTo(url, query)
   }
 
   /**

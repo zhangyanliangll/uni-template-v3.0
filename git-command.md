@@ -63,4 +63,6 @@
 
 | volta install node@14 ｜ 默认使用的版本
 
-| volta pin node@14.17 | 当前项目需要使用 node 的版本
+| volta pin node@16 | 当前项目需要使用 node 的版本
+
+| volta pin yarn@1 | 当前项目需要使用 yarn 的版本

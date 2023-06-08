@@ -2,10 +2,16 @@ export type navigateOptionsType = string | any
 
 export type NavigateGoOptionsType = {
   url: string
-  query?: Record<string, unknown>
+  isH5?: boolean
+  query?: NavigateGoOptionsQueryType
 } | string | number
 
 export type NavigateGoType = 'redirect' | 'reLaunch'
+
+export interface NavigateGoOptionsQueryType {
+  [key: string]: any
+}
+
 
 export type ToastOptionsType = {
   title: string
