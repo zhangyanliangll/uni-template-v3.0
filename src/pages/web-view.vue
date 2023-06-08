@@ -43,7 +43,7 @@ onLoad((options: any) => {
     }
 
     // 默认 H5 跳转 域名
-    const IP = host ? host : ''
+    const IP = host ? host : import.meta.env.VITE_H5_URL
 
     // 设置标题
     wx.setNavigationBarTitle({
