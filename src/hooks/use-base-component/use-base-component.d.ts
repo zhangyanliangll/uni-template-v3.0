@@ -9,12 +9,8 @@ export type NavigateGoOptionsType = {
 
 export type NavigateGoOptionsH5Type = {
   isH5: boolean
-  query: NavigateGoOptionsQueryH5Type
-}
-
-export interface NavigateGoOptionsQueryH5Type {
-  [key: string]: any
   key: WebViewConfigKeysType
+  query?: Record<string, any>
 }
 
 export type NavigateGoType = 'redirect' | 'reLaunch'

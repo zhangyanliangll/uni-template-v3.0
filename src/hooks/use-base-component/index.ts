@@ -23,6 +23,7 @@ export default (): UseBaseComponent => {
       // #endif
       // #ifndef H5
       url = '/pages/web-view'
+      query.key = options.key
       // #endif
     }
 
