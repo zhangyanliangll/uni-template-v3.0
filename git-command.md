@@ -65,4 +65,11 @@
 
 | volta pin node@16 | 当前项目需要使用 node 的版本
 
+| volta pin pnpm | node 版本需要 14 及以上 安装
+
 | volta pin yarn@1 | 当前项目需要使用 yarn 的版本
+
+｜ PNPM
+｜ pnpm config get registry ｜ 查看镜像源
+｜ pnpm config set registry https://registry.npmmirror.com ｜ 设置淘宝镜像
+｜ pnpm config set registry https://registry.npm.taobao.org ｜ 设置淘宝镜像

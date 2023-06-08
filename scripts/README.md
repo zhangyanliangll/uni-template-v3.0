@@ -1,5 +1,5 @@
-## check-yarn.js
+## check-pnpm-yarn.js
 
 ```
-限制只能使用yarn相关下载命令
+限制只能使用pnpm|yarn相关下载命令
 ```

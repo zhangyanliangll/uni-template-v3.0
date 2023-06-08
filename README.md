@@ -2,7 +2,7 @@
 
 1. 使用时将 package.json 的 name 换成当前项目的名称
 2. 在.gitignore 文件添加打包后的目录名
-3. 下载安装包只能使用 yarn；（安装 yarn：npm install -g yarn；查看版本：yarn --version；）
+3. 下载安装包只能使用 pnpm；（安装 pnpm：npm install -g pnpm；查看版本：pnpm --version；）
 
 ## src 目录结构
 
@@ -24,7 +24,7 @@
 # 项目插件版本：
 
 1. vue@3.2. pinia@2.0.25;
-2. node 版本 v14.15.4;
+2. node 版本 v16.20.0;
 3. uni-app @3.0
 
 ## 文件的命名规范和样式的命名规范：
