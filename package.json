@@ -39,7 +39,8 @@
     "build:quickapp-webview-union": "uni build -p quickapp-webview-union",
     "preinstall": "node ./scripts/check-pnpm-yarn.js",
     "lint": "eslint --ext .ts,tsx,vue src/** --no-error-on-unmatched-pattern --quiet",
-    "lint:fix": "eslint --ext .ts,tsx,vue src/** --no-error-on-unmatched-pattern --fix"
+    "lint:fix": "eslint --ext .ts,tsx,vue src/** --no-error-on-unmatched-pattern --fix",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@dcloudio/uni-app": "3.0.0-alpha-3080420230602001",
@@ -79,7 +80,7 @@
     "eslint": "^8.28.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.7.0",
-    "husky": "4.3.8",
+    "husky": "^8.0.0",
     "lint-staged": "9.5.0",
     "mini-types": "^0.1.7",
     "miniprogram-api-typings": "^3.6.0",
