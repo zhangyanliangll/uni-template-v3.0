@@ -72,18 +72,20 @@ export const request = async ({
  * 文件上传 api
  * @param url 请求路径
  * @param filePath 文件 资源路径
+ * @param filePath HTTP 请求中其他额外的 form data
  * @returns
  */
 export const upload = async (
   url: string,
   filePath: string,
+  formData?: Record<string, any>,
 ): Promise<{ url: string }> => {
   return new Promise((resolve, reject) => {
     uni.uploadFile({
       url: API_UPLOAD_URL + url,
       filePath,
       name: 'file',
-      formData: {},
+      formData,
       success: (response) => {
         const data = JSON.parse(response.data)
         if (response.statusCode === 200) {

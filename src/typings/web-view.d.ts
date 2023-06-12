@@ -10,6 +10,6 @@ export type WebViewItemType = {
   query?: string
 }
 
-export type WebViewConfig =  {
+export type WebViewConfigType =  {
   [P in WebViewConfigKeysType]: WebViewItemType
 }

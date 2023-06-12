@@ -6,13 +6,13 @@
 import { onLoad } from '@dcloudio/uni-app'
 import qs from 'qs'
 import { isObject } from '@/utils/is'
-import { WebViewConfig, WebViewConfigKeysType } from '@/typings/web-view'
+import { WebViewConfigType, WebViewConfigKeysType } from '@/typings/web-view'
 
 import { ref } from 'vue'
 
 const url = ref('')
 
-const config: WebViewConfig = {
+const config: WebViewConfigType = {
   _path: {
     title: '',
     host: '',
@@ -46,7 +46,7 @@ onLoad((options: any) => {
     const IP = host ? host : import.meta.env.VITE_H5_URL
 
     // 设置标题
-    wx.setNavigationBarTitle({
+    uni.setNavigationBarTitle({
       title: options.title || title,
     })
 
