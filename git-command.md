@@ -57,9 +57,13 @@
 
 | git reset --hard HEAD^ | 撤销 commit 并且也撤销 add
 
+| git stash drop stash@{1} | 删除 stash
+
+# Node/Npm/Yarn 的常用方法
+
 | `sudo n 14.0.0` | 安装指定版本 node
 
-| node 版本 切换工具 volta ｜ Mac 安装： `curl https://get.volta.sh | bash`
+| `node 版本 切换工具 volta` ｜ Mac 安装： `curl https://get.volta.sh | bash`
 
 | volta install node@14 ｜ 默认使用的版本
 
@@ -68,6 +72,12 @@
 | volta pin pnpm | node 版本需要 14 及以上 安装
 
 | volta pin yarn@1 | 当前项目需要使用 yarn 的版本
+
+| `volta 卸载 node/yarn/npm`
+
+| cd ~/.volta/tools/image | 进入 tools 在 cd 进入 node
+
+| cd node rm -rf 12.0.0 | 卸载 node 12.0.0 版本
 
 ｜ PNPM
 ｜ pnpm config get registry ｜ 查看镜像源
