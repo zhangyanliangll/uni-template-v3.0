@@ -13,6 +13,7 @@ module.exports = {
     'plugin:vue/vue3-recommended',
     '@vue/prettier',
     '@vue/typescript/recommended',
+    './.eslintrc-auto-import.json',
   ],
   plugins: ['vue', '@typescript-eslint'],
   rules: {

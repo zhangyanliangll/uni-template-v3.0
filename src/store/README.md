@@ -4,7 +4,7 @@
 
 ```vue
 <script setup lang="ts">
-import appStore from '@/store/app'
+import appStore from '@/store/modules/app'
 const store = appStore()
 
 console.log(store.token, '====token====')

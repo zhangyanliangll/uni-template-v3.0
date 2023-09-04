@@ -66,7 +66,7 @@ const getCurrentAppInfo = () => {
   uni.login({
     success: (result) => {
       if (result.code) {
-        console.log(result, '*-*-*-result*-*')
+        console.log(result, '*-*-*-获取程序信息*-*')
       }
     },
   })

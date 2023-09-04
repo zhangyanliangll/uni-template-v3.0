@@ -1,6 +1,7 @@
 import { defineConfig, loadEnv } from 'vite'
 import type { ConfigEnv, UserConfig } from 'vite'
 import uni from '@dcloudio/vite-plugin-uni'
+import autoImport from 'unplugin-auto-import/vite'
 import { resolve } from 'path'
 
 // https://vitejs.dev/config/
@@ -26,7 +27,16 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
         },
       },
     },
-    plugins: [uni()],
+    plugins: [
+      uni(),
+      autoImport({
+        imports: ['vue', 'vue-router'], // 需要引入的类型来源
+        dts: 'src/typings/auto-import.d.ts', // 根据引入来源自动生成的类型声明文件路径)
+        eslintrc: {
+          enabled: true, // 使用 eslint 配置
+        },
+      }),
+    ],
     server: {
       host: true,
       port: env.VITE_PORT as any,

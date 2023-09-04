@@ -8,8 +8,6 @@ import qs from 'qs'
 import { isObject } from '@/utils/is'
 import { WebViewConfigType, WebViewConfigKeysType } from '@/typings/web-view'
 
-import { ref } from 'vue'
-
 const url = ref('')
 
 const config: WebViewConfigType = {
