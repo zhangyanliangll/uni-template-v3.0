@@ -1,8 +1,8 @@
-export interface UnistorageOptions<K extends keyof StoreInterface.Storage> {
+export interface UnistorageOptions<K extends StorageInterface.StoreKeys> {
   // 缓存的键，默认为该 store 的 id
   key?: K
   // 需要缓存的路径
-  paths?: (keyof StoreInterface.Storage[K])[]
+  paths?: (keyof StorageInterface.Store[K])[]
   // 初始化恢复前触发
   beforeRestore?: Function
   // 初始化恢复后触发
@@ -16,11 +16,12 @@ export interface UnistorageOptions<K extends keyof StoreInterface.Storage> {
   }
 }
 
+export type UnistorageType = {
+  [K in StorageInterface.StoreKeys]: UnistorageOptions<K>
+}
+
 declare module 'pinia' {
   interface DefineStoreOptionsBase<S, Store> {
-    unistorage:
-      | true
-      | UnistorageOptions<'appStore'>
-      | UnistorageOptions<'userStore'>
+    unistorage: true | UnistorageType[StorageInterface.StoreKeys]
   }
 }
