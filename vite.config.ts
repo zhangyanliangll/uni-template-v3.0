@@ -30,7 +30,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
     plugins: [
       uni(),
       autoImport({
-        imports: ['vue', 'vue-router'], // 需要引入的类型来源
+        imports: ['vue'], // 需要引入的类型来源
         dts: 'src/typings/auto-import.d.ts', // 根据引入来源自动生成的类型声明文件路径)
         eslintrc: {
           enabled: true, // 使用 eslint 配置

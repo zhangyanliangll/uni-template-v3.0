@@ -3,7 +3,7 @@ import { onLaunch, onShow, onHide, onPageNotFound } from '@dcloudio/uni-app'
 
 onLaunch(() => {
   // 隐藏原生导航栏 使用自定义底部导航
-  uni.hideTabBar()
+  // uni.hideTabBar()
   // #ifndef H5
   // 检测升级
   updateApp()
