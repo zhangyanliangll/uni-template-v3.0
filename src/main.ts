@@ -2,7 +2,6 @@ import { createSSRApp } from 'vue'
 import App from './App.vue'
 import * as Pinia from 'pinia'
 import { createUnistorage } from 'pinia-plugin-unistorage'
-import '@/utils/inject'
 
 // 注册 全局公共 方法
 import '@/utils/inject'

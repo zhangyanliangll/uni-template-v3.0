@@ -1,5 +1,5 @@
 <template>
-  <view><web-view :src="url"></web-view></view>
+  <web-view :src="url"></web-view>
 </template>
 
 <script setup lang="ts">

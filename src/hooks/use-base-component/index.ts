@@ -1,10 +1,11 @@
 import useRouter from '@/hooks/use-navigate'
 import { isTabBar, isPage } from '@/utils/route'
-import { isString, isObject } from '@/utils/is'
+import { isString, isObject, isNumber } from '@/utils/is'
 import type { UseBaseComponent } from './use-base-component'
 
 export default (): UseBaseComponent => {
-  const { navigateTo, redirectTo, reLaunch, switchTab } = useRouter()
+  const { navigateTo, redirectTo, reLaunch, switchTab, navigateBack } =
+    useRouter()
 
   /**
    * 跳转方法
@@ -14,6 +15,10 @@ export default (): UseBaseComponent => {
   const navigateGo = (options: any, type?: string) => {
     let url = options?.url || options || '' // 跳转路径
     const query = options?.query || {}
+
+    if (isNumber(options)) {
+      return navigateBack(url)
+    }
 
     // http 开头 || isH5
     if (url.isUrl() || options?.isH5) {

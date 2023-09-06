@@ -59,11 +59,6 @@
     "watch": true,
     "watchEffect": true,
     "watchPostEffect": true,
-    "watchSyncEffect": true,
-    "onBeforeRouteLeave": true,
-    "onBeforeRouteUpdate": true,
-    "useLink": true,
-    "useRoute": true,
-    "useRouter": true
+    "watchSyncEffect": true
   }
 }

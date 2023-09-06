@@ -8,6 +8,11 @@ export function isArray(value: any): value is Array<any> {
   return value && Array.isArray(value)
 }
 
+// 是否是数值
+export function isNumber(value: any): value is Array<any> {
+  return is(value, 'Number')
+}
+
 // 是否为字符串类型
 export function isString(value: unknown): value is string {
   return is(value, 'String')
