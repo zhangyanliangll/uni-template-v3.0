@@ -1,22 +1,21 @@
-import pagesJson from '@/pages.json'
-import type { Route } from '@/typings/route'
-
+import pagesJson from '@/router/index'
 const { pages, tabBar, subPackages } = pagesJson
 
-// 将pages.json转换成Map对象,path为key
-const pagesMap = new Map<string, Route>()
+type RouteConfig = RouteUtils.RouteConfig<string>
 
-pages.forEach((page) => {
-  pagesMap.set(page.path, page as Route)
+// 将 pages.json 转换成 Map对象, path 为 key
+const pagesMap = new Map<string, RouteConfig>()
+
+pages.forEach((page: RouteConfig) => {
+  pagesMap.set(`/${page.path}`, page)
 })
 
 if (Array.isArray(subPackages) && subPackages.length) {
   subPackages.forEach((el) => {
     const rootPath = el.root
-    // @ts-ignore
-    el.pages.forEach((page) => {
+    el.pages.forEach((page: RouteConfig) => {
       page.path = `/${rootPath}/${page.path}`
-      pagesMap.set(page.path, page as Route)
+      pagesMap.set(page.path, page)
     })
   })
 }
@@ -25,14 +24,13 @@ if (tabBar) {
   const tabBarList = tabBar.list
   if (Array.isArray(tabBarList)) {
     tabBarList.forEach((el) => {
-      if (pagesMap.has(el.pagePath)) {
-        const page = pagesMap.get(el.pagePath)
-        const meta = page?.meta || {}
-        // @ts-ignore
-        meta.tabBar = true
-        // @ts-ignore
-        page.meta = Object.assign({}, meta)
-        pagesMap.set(`/${el.pagePath}`, page as Route)
+      const pagePath = `/${el.pagePath}`
+      if (pagesMap.has(pagePath)) {
+        const page: any = pagesMap.get(pagePath)
+        const style = page?.style || {}
+        style.tabBar = true
+        page.style = Object.assign({}, style)
+        pagesMap.set(pagePath, page)
       }
     })
   }
@@ -40,7 +38,7 @@ if (tabBar) {
 
 // 判断是否为 tabBar
 const isTabBar = (path: string) => {
-  return pagesMap.get(path)?.meta?.tabBar
+  return pagesMap.get(path)?.style?.tabBar
 }
 
 // 是否存在页面
@@ -48,6 +46,6 @@ const isPage = (path: string) => {
   return pagesMap.get(path)
 }
 
-console.log(pagesMap, '*-*-*pagesMap---')
+console.log(pagesJson, '-=-=pagesJson-=-=')
 
 export { isTabBar, isPage, pagesMap }

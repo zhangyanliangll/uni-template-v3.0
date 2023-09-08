@@ -6,11 +6,9 @@
 import { onLoad } from '@dcloudio/uni-app'
 import qs from 'qs'
 import { isObject } from '@/utils/is'
-import { WebViewConfigType, WebViewConfigKeysType } from '@/typings/web-view'
-
 const url = ref('')
 
-const config: WebViewConfigType = {
+const config: WebViewNamespace.ConfigsType = {
   _path: {
     title: '',
     host: '',
@@ -29,7 +27,7 @@ onLoad((options: any) => {
   let { query } = options
 
   if (Object.prototype.hasOwnProperty.call(config, key)) {
-    const configItem = config[key as WebViewConfigKeysType]
+    const configItem = config[key as WebViewNamespace.ConfigKeys]
     const { host, title } = configItem
 
     if (isObject(query)) {

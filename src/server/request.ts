@@ -5,7 +5,6 @@ import {
   NO_ERROR_MSG_CODE,
   ERROR_STATUS,
 } from '@/config'
-import type { FetchResponse } from '@/typings/server'
 import { getHeader } from './helpers'
 
 /**

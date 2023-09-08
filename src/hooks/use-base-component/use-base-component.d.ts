@@ -1,28 +1,52 @@
-import { WebViewConfigKeysType } from '@/typings/web-view';
+declare namespace UseBaseComponent {
+  /** navigateGo 第一个参数 */
+  type NavigateGoOptionsType =
+    | UseBaseComponentUtils.GetNavigateGoOptionsType
+    | Exclude<Route.AllRoutePath, Route.WewViewPath>
+    | number
 
-export type navigateOptionsType = string | any
+  /** navigateGo 第二个参数 */
+  type NavigateGoToType = 'redirect' | 'reLaunch'
 
-export type NavigateGoOptionsType = {
-  url: string
-  query?: Record<string, any>
+  interface CustomComponent {
+    /**
+     * 跳转方法
+     * @param options 跳转配置
+     * @param type 类型 redirect
+     */
+    navigateGo: (
+      options: NavigateGoOptionsType,
+      toType?: NavigateGoToType,
+    ) => void
+    /**
+     * toast弹窗
+     * @param options
+     * @returns
+     */
+    toast: (options: string | UniNamespace.ShowToastOptions) => Promise<unknown>
+    /**
+     * modal层
+     * @param options 配置
+     * @returns
+     */
+    modal: (options: UniNamespace.ShowModalOptions) => Promise<unknown>
+  }
 }
 
-export type NavigateGoOptionsH5Type = {
-  isH5: boolean
-  key: WebViewConfigKeysType
-  query?: Record<string, any>
-}
-
-export type NavigateGoType = 'redirect' | 'reLaunch'
-
-export type ToastOptionsType = {
-  title: string
-  icon?: string
-  duration?: string | number
-}
-
-export interface UseBaseComponent {
-  toast: (options: string | ToastOptionsType) => Promise<unknown>
-  modal: (options: string | any) => Promise<unknown>
-  navigateGo: (options: NavigateGoOptionsType | NavigateGoOptionsH5Type | string | number, type?: NavigateGoType) => void
+declare namespace UseBaseComponentUtils {
+  /** 获取 navigateGo 方法第一个参数类型 */
+  type GetNavigateGoOptionsType<
+    T extends Route.AllRoutePath = Route.AllRoutePath,
+    V extends Route.WewViewPath = Route.WewViewPath,
+  > = T extends V
+    ? {
+        url: V
+        query: {
+          key: WebViewNamespace.ConfigKeys
+        }
+      }
+    : {
+        url: T
+        query?: ObjectType
+      }
 }

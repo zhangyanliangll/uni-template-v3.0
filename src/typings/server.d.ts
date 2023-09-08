@@ -1,10 +1,10 @@
 
 
 // 请求方式
-export type RequestMethod = 'GET' | 'POST' | 'PUT'
+type RequestMethod = 'GET' | 'POST' | 'PUT'
 
 /** 后端接口返回的数据结构配置 */
-export declare namespace FetchResponse {
+declare namespace FetchResponse {
   interface Request<T = Record<string, unknown>> {
     /** 表示请求路径字段 */
     url: string

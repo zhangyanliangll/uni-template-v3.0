@@ -2,6 +2,10 @@ import { defineConfig, loadEnv } from 'vite'
 import type { ConfigEnv, UserConfig } from 'vite'
 import uni from '@dcloudio/vite-plugin-uni'
 import autoImport from 'unplugin-auto-import/vite'
+import uniHot from 'uni-pages-hot-modules'
+// 安装条件编译命令，安装之后，uniapp就会支持exec hotJs的条件编译
+uniHot.setupHotJs()
+
 import { resolve } from 'path'
 
 // https://vitejs.dev/config/
@@ -36,6 +40,8 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
           enabled: true, // 使用 eslint 配置
         },
       }),
+      // 注册uni-pages-hot-modules的热更新vite插件
+      uniHot.createHotVitePlugin(),
     ],
     server: {
       host: true,

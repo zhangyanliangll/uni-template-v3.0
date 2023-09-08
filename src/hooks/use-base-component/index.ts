@@ -1,9 +1,8 @@
 import useRouter from '@/hooks/use-navigate'
 import { isTabBar, isPage } from '@/utils/route'
 import { isString, isObject, isNumber } from '@/utils/is'
-import type { UseBaseComponent } from './use-base-component'
 
-export default (): UseBaseComponent => {
+export default (): UseBaseComponent.CustomComponent => {
   const { navigateTo, redirectTo, reLaunch, switchTab, navigateBack } =
     useRouter()
 
@@ -12,25 +11,23 @@ export default (): UseBaseComponent => {
    * @param options 跳转配置
    * @param type 类型 redirect
    */
-  const navigateGo = (options: any, type?: string) => {
-    let url = options?.url || options || '' // 跳转路径
+  const navigateGo = (
+    options: any,
+    type?: UseBaseComponent.NavigateGoToType,
+  ) => {
+    const url = options?.url || options || '' // 跳转路径
     const query = options?.query || {}
 
     if (isNumber(options)) {
       return navigateBack(url)
     }
 
-    // http 开头 || isH5
-    if (url.isUrl() || options?.isH5) {
-      // #ifdef H5
+    // #ifdef H5
+    // http 开头
+    if (url.isUrl()) {
       window.location = url as any
-      return
-      // #endif
-      // #ifndef H5
-      url = '/pages/web-view'
-      query.key = options.key
-      // #endif
     }
+    // #endif
 
     if (!isPage(url)) {
       throw '页面不存在 404 '
@@ -50,10 +47,10 @@ export default (): UseBaseComponent => {
 
   /**
    * toast弹窗
-   * @param options {title:标题 | icon:显示图标(默认: none) | duration:时长(默认: 3000)}
-   * @returns
+   * @param options
+   * @returns Promise
    */
-  const toast = (options: string | any) => {
+  const toast = (options: string | UniNamespace.ShowToastOptions) => {
     if (isString(options)) {
       options = { title: options, icon: 'none', duration: 3000 }
     }
@@ -69,10 +66,14 @@ export default (): UseBaseComponent => {
 
   /**
    * modal层
-   * @param options { title: 标题 | content: 内容 | showCancel: true 显示取消 }
-   * @returns
+   * @param options
+   * @returns Promise
    */
-  const modal = ({ title, content, showCancel = true }: any) => {
+  const modal = ({
+    title,
+    content,
+    showCancel = true,
+  }: UniNamespace.ShowModalOptions) => {
     return new Promise((resolve) => {
       uni.showModal({
         title,
@@ -90,8 +91,8 @@ export default (): UseBaseComponent => {
   }
 
   return {
+    navigateGo,
     toast,
     modal,
-    navigateGo,
   }
 }

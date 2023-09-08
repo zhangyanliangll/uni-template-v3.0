@@ -1,4 +1,6 @@
 import '../date-format'
+import './uni'
+
 /**
  * 移除数组中某个元素
  */

@@ -15,6 +15,20 @@ module.exports = {
     '@vue/typescript/recommended',
     './.eslintrc-auto-import.json',
   ],
+  overrides: [
+    {
+      files: ['./scripts/*.ts'],
+      rules: {
+        'no-unused-expressions': 'off',
+      },
+    },
+    {
+      files: ['*.vue'],
+      rules: {
+        'no-undef': 'off', // use tsc to check the ts code of the vue
+      },
+    },
+  ],
   plugins: ['vue', '@typescript-eslint'],
   rules: {
     'vue/multi-word-component-names': 0,
