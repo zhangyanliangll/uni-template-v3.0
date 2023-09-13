@@ -1,4 +1,4 @@
-const list: any = [
+const list: Route.TabBarType[] = [
   {
     pagePath: 'pages/index',
     text: '首页',

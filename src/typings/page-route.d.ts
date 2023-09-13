@@ -10,7 +10,7 @@ declare namespace RouteKey {
    * @translate TabBar 页面路由
    */
   type TabBar = RouteUtils.GetAppointKeys<
-    'package-name/pages/name' | 'package-user/pages/lol'
+    "pages/index" | "pages/my"
   >
 
   /**

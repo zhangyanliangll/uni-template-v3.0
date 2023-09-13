@@ -6,6 +6,9 @@ declare namespace Route {
   type SubPackagesType =
     RouteUtils.GetSubPackages[RouteUtils.GetSubPackagesRoot]
 
+  /** 底部导航类型 */
+  type TabBarType = RouteUtils.GetTabBarConfig
+
   /** 全部路径 Key */
   type AllRouteKey = RouteUtils.GetAllRouteKey
 
@@ -76,6 +79,18 @@ declare namespace RouteUtils {
 
   /** 获取指定 Key */
   type GetAppointKeys<U extends GetAllRouteKey> = Extract<GetAllRouteKey, U>
+
+  /** 底部导航配置 */
+  type GetTabBarConfig = {
+    /** 页面路径 */
+    pagePath: RouteKey.TabBar
+    /** 按钮名称 */
+    text: string
+    /** 未选中显示的图标 */
+    iconPath: string
+    /** 选中显示的图标 */
+    selectedIconPath: string
+  }
 
   type Extract<T, U extends T> = T extends U ? T : never
 }
