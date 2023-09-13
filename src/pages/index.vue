@@ -7,7 +7,7 @@
 <script setup lang="ts">
 const jump = () => {
   uni.$navigateGo({
-    url: '/package-user/pages/index',
+    url: '/pages/web-view',
     query: {
       key: 'add-user',
     },

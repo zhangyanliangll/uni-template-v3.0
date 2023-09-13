@@ -1,0 +1,148 @@
+{
+  "editor.renderWhitespace": "all",
+  "editor.cursorBlinking": "smooth",
+  "editor.detectIndentation": false,
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "editor.minimap.enabled": false,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.formatOnPaste": true,
+  "editor.fontLigatures": true,
+  "editor.fontFamily": "Meslo LG S for Powerline,enlo, Monaco, 'Courier New', monospace",
+  "editor.columnSelection": false,
+  "eslint.format.enable": true,
+  "editor.language.colorizedBracketPairs": [],
+  "editor.indentSize": "tabSize",
+  "emmet.includeLanguages": {
+    "wxml": "html"
+  },
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx",
+    "vue": "html",
+    "vue-html": "html"
+  },
+  "eslint.options": {
+    "extensions": [
+      ".js",
+      ".vue"
+    ]
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "code-runner.executorMap": {
+    "javascript": "node"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "workbench.startupEditor": "newUntitledFile", // 是否显示 开始⻚⾯
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "gitlens.gitCommands.closeOnFocusOut": true,
+  "editor.suggestSelection": "first",
+  "explorer.confirmDelete": false,
+  "gitlens.views.repositories.files.layout": "list",
+  "git.autofetch": true,
+  "gitlens.advanced.fileHistoryShowAllBranches": true,
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "editor.fontSize": 13.5,
+  "editor.semanticTokenColorCustomizations": {},
+  "explorer.confirmDragAndDrop": false,
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "terminal.integrated.tabs.enabled": true,
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "editor.linkedEditing": true,
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.colorCustomizations": {},
+  "leek-fund.funds": [
+    [
+      "003095",
+      "007872",
+      "161725",
+      "012725",
+      "160629",
+      "012347",
+      "008764",
+      "010160",
+      "159996"
+    ]
+  ],
+  "liveServer.settings.donotShowInfoMsg": true,
+  "leek-fund.fundSort": -2,
+  "workbench.editorAssociations": {
+    "*.class": "default",
+    "*.pdf": "default"
+  },
+  "editor.largeFileOptimizations": false,
+  "template-string-converter.validLanguages": [
+    "vue",
+    "svelte",
+    "typescript",
+    "javascript",
+    "typescriptreact",
+    "javascriptreact"
+  ],
+  "leek-fund.stockSort": 0,
+  "editor.inlineSuggest.enabled": true,
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
+  "editor.accessibilitySupport": "off",
+  "vsicons.dontShowNewVersionMessage": true,
+  "eslint.rules.customizations": [],
+  "editor.language.brackets": [],
+  "files.associations": {
+    "*.vue": "vue",
+    "*.ftl": "html",
+    "*.js": "javascriptreact",
+    "*.cjson": "jsonc",
+    "*.wxml": "html",
+    "*.wxss": "css",
+    "*.wxs": "javascript"
+  },
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "html.format.wrapAttributes": "force-expand-multiline",
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "javascript.preferences.quoteStyle": "single",
+  "search.showLineNumbers": true,
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/dist": true
+  },
+  "typescript.preferences.quoteStyle": "single",
+  "typescript.check.npmIsInstalled": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "diffEditor.renderSideBySide": false,
+  "window.commandCenter": false,
+}

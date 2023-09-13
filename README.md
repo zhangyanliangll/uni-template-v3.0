@@ -1,7 +1,7 @@
 ## 项目启动
 
-```pnpm
-pnpm
+```shell
+pnpm i
 yarn dev
 ```
 
