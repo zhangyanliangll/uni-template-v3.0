@@ -6,6 +6,7 @@ onLaunch(() => {
   // uni.hideTabBar()
   // #ifndef H5
   // 检测升级
+
   updateApp()
   // #endif
   // 获取程序信息

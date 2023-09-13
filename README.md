@@ -7,19 +7,24 @@ yarn dev
 
 ## src 目录结构
 
+- api api 接口
 - assets 资产目录
   - images 公用图片
   - scss 公共 scss
   - json 本地数据目录
   - ts 公用脚本目录
+- config 公共配置
+- hooks 公共方法
+- package-\* 分包页面
 - components vue 组件目录
 - pages 页面目录
+- router 配置页面路由、导航条、选项卡等页面类信息，详见
 - static 本地静态资源目录
 - store 状态树目录
 - App.vue 应用配置，用来配置 App 全局样式以及监听 应用生命周期
 - main.js Vue 初始化入口文件
 - manifest.json 配置应用名称、appid、logo、版本等打包信息，详见
-- pages.json 配置页面路由、导航条、选项卡等页面类信息，详见
+- pages.json (不可修改，会失效，请到 `router` 对应模块进行注册)
 - uni.scss 配置 scss 的全局变量
 
 # 项目插件版本：
@@ -49,6 +54,7 @@ yarn dev
 1. 使用时将 package.json 的 name 换成当前项目的名称
 2. 在.gitignore 文件添加打包后的目录名
 3. 下载安装包`只能使用 pnpm`；（安装 pnpm：npm install -g pnpm；查看版本：pnpm --version；）
+4. 不可修改 `src` 下的 `pages.json` 文件进行注册路由，会失效
 
 ### vite cli 配置
 

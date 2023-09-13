@@ -8,7 +8,7 @@
     "build:test": "uni build --mode test -p mp-weixin",
     "dev:h5": "uni",
     "build:h5": "uni build",
-    "build:h5-test": "uni build --mode test -p mp-weixin",
+    "build:h5-test": "uni build --mode test",
     "dev:app": "uni -p app",
     "dev:app-android": "uni -p app-android",
     "dev:app-ios": "uni -p app-ios",
@@ -63,7 +63,6 @@
     "dayjs": "^1.11.6",
     "pinia": "^2.0.25",
     "qs": "^5.0.0",
-    "uni-pages-hot-modules": "^1.0.3",
     "vue": "^3.3.4",
     "vue-i18n": "^9.1.9"
   },

@@ -1,16 +1,18 @@
 <template>
   <view class="content flex-column justify-center items-center">
-    <view @click="jump">跳123转</view>
+    <view style="margin-top: 100px" @click="jump">跳123转</view>
   </view>
 </template>
 
 <script setup lang="ts">
-import useBaseComponent from '@/hooks/use-base-component'
-
-const { navigateGo } = useBaseComponent()
-
 const jump = () => {
-  navigateGo('/pages/my')
+  uni.$navigateGo({
+    url: '/package-user/pages/index',
+    query: {
+      key: 'add-user',
+    },
+  })
+  // uni.$toast('123123123')
 }
 </script>
 

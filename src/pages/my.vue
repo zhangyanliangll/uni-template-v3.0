@@ -6,6 +6,7 @@
 import { onLoad } from '@dcloudio/uni-app'
 
 onLoad((options: any) => {
+  // console.log(options)
   console.log(options)
 })
 </script>
