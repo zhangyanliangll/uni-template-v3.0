@@ -17,7 +17,7 @@ pnpm-debug.log*
 .yarnrc.yml
 .yarn
 .idea
-# .vscode
+.vscode
 *.suo
 *.ntvs*
 *.njsproj
