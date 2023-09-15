@@ -4,11 +4,14 @@ import { onLaunch, onShow, onHide, onPageNotFound } from '@dcloudio/uni-app'
 onLaunch(() => {
   // 隐藏原生导航栏 使用自定义底部导航
   // uni.hideTabBar()
-  // #ifndef H5
-  // 检测升级
 
+  // #ifndef H5
   updateApp()
   // #endif
+
+  // 获取系统信息及注入
+  getSystemInfoSync()
+
   // 获取程序信息
   getCurrentAppInfo()
 })
@@ -71,6 +74,12 @@ const getCurrentAppInfo = () => {
       }
     },
   })
+}
+
+// 系统信息
+const getSystemInfoSync = () => {
+  const systemInfo: Record<string, any> = uni.getSystemInfoSync()
+  provide('systemInfo', systemInfo)
 }
 
 // #ifdef MP-WEIXIN
