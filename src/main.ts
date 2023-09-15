@@ -3,6 +3,9 @@ import App from './App.vue'
 import * as Pinia from 'pinia'
 import { createUnistorage } from 'pinia-plugin-unistorage'
 
+// 注册 uviewPlus 组件库
+import uviewPlus from 'uview-plus'
+
 // 注册 全局公共 方法
 import '@/utils/inject'
 
@@ -26,6 +29,8 @@ export function createApp() {
 
   // piain 持久化 👇
   store.use(createUnistorage())
+
+  store.use(uviewPlus)
 
   app.use(store)
 

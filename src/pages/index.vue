@@ -2,9 +2,11 @@
   <view class="content flex-column justify-center items-center">
     <view style="margin-top: 100px" @click="jump">跳123转</view>
   </view>
+  <c-tab-bar value="0" />
 </template>
 
 <script setup lang="ts">
+import cTabBar from '@/components/c-tab-bar/index.vue'
 const jump = () => {
   uni.$navigateGo({
     url: '/pages/web-view',
@@ -12,7 +14,6 @@ const jump = () => {
       key: 'add-user',
     },
   })
-  // uni.$toast('123123123')
 }
 </script>
 

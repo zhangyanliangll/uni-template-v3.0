@@ -20,4 +20,11 @@ export default {
     navigationBarBackgroundColor: '#F8F8F8',
     backgroundColor: '#F8F8F8',
   },
+  easycom: {
+    custom: {
+      '^u--(.*)': 'uview-plus/components/u-$1/u-$1.vue',
+      '^up-(.*)': 'uview-plus/components/u-$1/u-$1.vue',
+      '^u-([^-].*)': 'uview-plus/components/u-$1/u-$1.vue',
+    },
+  },
 }

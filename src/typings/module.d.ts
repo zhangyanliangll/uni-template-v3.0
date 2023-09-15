@@ -6,3 +6,4 @@ declare module '*.tsx'
 
 declare module 'qs'
 declare module 'pinia-plugin-unistorage'
+declare module "uview-plus"
