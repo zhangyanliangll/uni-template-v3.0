@@ -30,7 +30,7 @@ export function createApp() {
   // piain 持久化 👇
   store.use(createUnistorage())
 
-  store.use(uviewPlus)
+  app.use(uviewPlus)
 
   app.use(store)
 
