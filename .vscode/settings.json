@@ -141,7 +141,7 @@
   "typescript.preferences.quoteStyle": "single",
   "typescript.check.npmIsInstalled": false,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   },
   "diffEditor.renderSideBySide": false,
   "window.commandCenter": false,
