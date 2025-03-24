@@ -5,7 +5,7 @@ export interface UseNavigate {
    * @param { Object } data 跳转参数
    * @returns { Promise }
    */
-  navigateTo: (url: string, data?: Record<string, unknown>) => Promise<unknown>
+  navigateTo: (url:  Route.ExcludeTabBarKeys, data?: Record<string, unknown>) => Promise<unknown>
 
   /**
    * 关闭当前页面，跳转到应用内的某个页面
@@ -13,7 +13,7 @@ export interface UseNavigate {
    * @param { Object } data 跳转参数
    * @returns { Promise }
    */
-  redirectTo: (url: string, data?: Record<string, unknown>) => Promise<unknown>
+  redirectTo: (url: Route.ExcludeTabBarKeys, data?: Record<string, unknown>) => Promise<unknown>
 
   /**
    * 关闭所有页面，打开到应用内的某个页面
@@ -21,7 +21,7 @@ export interface UseNavigate {
    * @param { Object } data 跳转参数
    * @returns { Promise }
    */
-  reLaunch: (url: string, data?: Record<string, unknown>) => Promise<unknown>
+  reLaunch: (url: Route.ExcludeTabBarKeys, data?: Record<string, unknown>) => Promise<unknown>
 
   /**
    * 返回上一页面或多级页面
@@ -36,5 +36,5 @@ export interface UseNavigate {
    * @param { Object } data 跳转参数
    * @returns { Promise }
    */
-  switchTab: (url: string) => Promise<unknown>
+  switchTab: (url:  Route.TabBarKeys) => Promise<unknown>
 }

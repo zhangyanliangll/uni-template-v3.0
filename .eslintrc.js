@@ -13,7 +13,6 @@ module.exports = {
     'plugin:vue/vue3-recommended',
     '@vue/prettier',
     '@vue/typescript/recommended',
-    './.eslintrc-auto-import.json',
   ],
   overrides: [
     {
@@ -41,7 +40,13 @@ module.exports = {
   },
   globals: {
     uni: true,
+    UniApp: true,
+    wx: true,
     getCurrentPages: true,
+    WechatMiniprogram: true,
+    UniHelper: true,
+    Page: true,
+    App: true,
     ObjectType: true,
   },
 }

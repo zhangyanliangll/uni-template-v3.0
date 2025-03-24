@@ -18,6 +18,12 @@ declare namespace Route {
   /** 分包路径 */
   type SubPackagesRoutePath = RouteUtils.GetSubPackagesUrl
 
+  /** 获取处了底部导航外的 Key */
+  type ExcludeTabBarKeys= RouteUtils.GetExcludeTabBarKeys
+
+    /** 获取底部导航的 Key */
+  type TabBarKeys= `/${RouteKey.TabBar}`
+
   /** web-view 路径 */
   type WewViewPath = `/${RouteKey.WewView}`
 
@@ -76,6 +82,9 @@ declare namespace RouteUtils {
 
   /** 获取路径完整 Key */
   type GetAllRouteKey = Pages | GetSubPackagesAllKey
+
+  /** 获取处了底部导航外的 Key */
+  type GetExcludeTabBarKeys= `/${Exclude<GetAllRouteKey, RouteKey.TabBar>}`
 
   /** 获取指定 Key */
   type GetAppointKeys<U extends GetAllRouteKey> = Extract<GetAllRouteKey, U>

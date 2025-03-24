@@ -5,7 +5,10 @@
 </template>
 
 <script setup lang="ts">
+const ll = ref(123)
 const jump = () => {
+  console.log(ll)
+
   uni.$navigateGo({
     url: '/pages/web-view',
     query: {
